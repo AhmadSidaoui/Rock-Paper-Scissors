@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Rock|Paper|Scissors</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 20px;
+            color: #333;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 35px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 5px;
+            border-radius: 100px;
+        }
+
+        button:hover {
+            background-color: purple;
+        }
+
+        #result {
+            margin-top: 100px;
+            font-size: 25px;
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+<h1 class='header'>Rock | Paper | Scissors</h1>
+<button id="rock"><strong>Rock</strong></button>
+<button id='paper'><strong>Paper</strong></button>
+<button id='scissors'><strong>Scissors</strong></button>
+<p id="result"></p>
+
+<script src = 'game.js'></script>
+<script>
+
+    const rockButton = document.getElementById('rock');
+    const paperButton = document.getElementById('paper');
+    const scissorsButton = document.getElementById('scissors');
+    const resultElement = document.getElementById('result');
+
+    rockButton.addEventListener('click', () => {
+        const result = playGame('rock');
+        resultElement.textContent = result[0];
+        document.body.style.background = `url(${result[1]}.png) no-repeat center bottom fixed`;
+    });
+
+    paperButton.addEventListener('click', () => {
+        const result = playGame('paper');
+        resultElement.textContent = result[0];
+        document.body.style.background = `url(${result[1]}.png) no-repeat center bottom fixed`;
+    });
+
+    scissorsButton.addEventListener('click', () => {
+        const result = playGame('scissors');
+        resultElement.textContent = result[0];
+        document.body.style.background = `url(${result[1]}.png) no-repeact center bottom fixed`;
+    });
+</script>
+</body>
+</html>
